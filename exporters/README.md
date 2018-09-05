@@ -1,36 +1,9 @@
 # Exporters
 
+Data collected by OpenCensus can be exported to any analysis tool or storage backend. OpenCensus exporters can be contributed by anyone, and we provide support for several open source backends and vendors out-of-the-box.
+
+Once you choose your backend, follow the instructions to initialize an exporter. Then, register the initialized exporter.  
 
 
-| BACKEND | C++ | ERLANG | GO | JAVA | NODE.JS | PHP | PYTHON | RUBY |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-
-
-| Datadog | – | – | T S | – | – | – | – | – |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-
-
-| Instana | – | – | – | T | T | – | – | – |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-
-
-| Jaeger | – | – | T | T | T | – | T | – |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-
-
-| Prometheus | S | S | S | S | – | – | – | – |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-
-
-| SignalFX | – | – | – | S | – | – | – | – |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-
-
-| Stackdriver | T S | T | T S | T S | T | – | T | – |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-
-
-| Zipkin | T | T | T | T | T | – | T | – |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-
+Learn more from the list of [supported exporters](supported-exporters/).
 
