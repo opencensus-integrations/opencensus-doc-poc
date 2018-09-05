@@ -1,6 +1,10 @@
 # Getting Started
 
-| Language | Tracing | Metrics |
+| Language |  |  |
 | :--- | :--- | :--- |
 | Java | [Tracing](tracing.md) | [Metrics](metrics.md) |
+| Go |  |  |
+| ... |  |  |
+
+
 

@@ -24,4 +24,5 @@
   * [Memcached](integrations/memcached.md)
 * [Roadmap](roadmap.md)
 * [Community](community.md)
+* [gRPC](grpc.md)
 
