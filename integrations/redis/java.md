@@ -1,12 +1,26 @@
-# Java
+# Java with Jedis
 
-Some Redis clients were already instrumented to provide traces and metrics with OpenCensus
+There is a specialized Jedis client that implements OpenCensus Tracing and Metrics. \[TODO: This is not the best way to integrate\]
 
-| PACKAGES | REPOSITORY LINK |
+|  | REPOSITORY LINK |
 | :--- | :--- |
 | jedis | [https://github.com/opencensus-integrations/jedis](https://github.com/opencensus-integrations/jedis) |
 
 ## Configure Maven / Gradle
+
+First, Install the artifact.
+
+```bash
+git clone ...
+mvn install
+mvn install:install-file -Dfile=$(pwd)/target/jedis-3.0.0-SNAPSHOT.jar \
+  -DgroupId=redis.clients -DartifactId=jedis -Dversion=3.0.0 \
+  -Dpackaging=jar -DgeneratePom=true
+```
+
+
+
+Then, configure the build dependency for Maven or Gradle.
 
 {% tabs %}
 {% tab title="Maven" %}
