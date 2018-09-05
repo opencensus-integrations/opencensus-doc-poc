@@ -36,7 +36,7 @@ When starting a new span, a custom sampler can be provided. If no custom samplin
 		}
 ```
 
-### Which Sampler To Use?
+### Which Sampler Will Be Used?
 
 The OpenCensus library samples based on the following rules:
 
