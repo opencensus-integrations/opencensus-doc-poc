@@ -63,21 +63,14 @@ You may need to access the current Span in order to enhance it with additional i
 
 To retrieve the Span from the current context.
 
-```java
-Tracer tracer = Tracing.getTracer();
-tracer.getCurrentSpan()
-
-// Do something with the Span
-span.addAnnotation("doing work");
-```
-
 {% tabs %}
 {% tab title="Java" %}
 ```java
+// 1. Use tracer to get the Span
 Tracer tracer = Tracing.getTracer();
-tracer.getCurrentSpan()
+Span span = tracer.getCurrentSpan()
 
-// Do something with the Span
+// 2. Do something with the Span
 span.addAnnotation("doing work");
 ```
 {% endtab %}
@@ -86,6 +79,8 @@ span.addAnnotation("doing work");
 ```go
 // 1. Span is retrieved when you create it.
 ctx, span := trace.StartSpan(context.Context ctx, "work")
+
+// 2. Do something with the span
 span.Annotate("doing work")
 ```
 {% endtab %}
