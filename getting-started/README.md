@@ -2,7 +2,7 @@
 
 | Language |  |  |
 | :--- | :--- | :--- |
-| Java | [Tracing](tracing.md) | [Metrics](metrics.md) |
+| Java | [Tracing](tracing/tracing.md) | [Metrics](metrics/) |
 | Go |  |  |
 | ... |  |  |
 

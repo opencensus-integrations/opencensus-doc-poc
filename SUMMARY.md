@@ -2,8 +2,10 @@
 
 * [OpenCensus](README.md)
 * [Getting Started](getting-started/README.md)
-  * [Tracing](getting-started/tracing.md)
-  * [Metrics](getting-started/metrics.md)
+  * [Tracing](getting-started/tracing/README.md)
+    * [Java](getting-started/tracing/tracing.md)
+  * [Metrics](getting-started/metrics/README.md)
+    * [Java](getting-started/metrics/java.md)
 * [Tracing](tracing/README.md)
   * [Span](tracing/span.md)
   * [Annotation](tracing/annotation.md)

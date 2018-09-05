@@ -1,4 +1,4 @@
-# Tracing
+# Java
 
 ## Configure Maven / Gradle
 
@@ -43,7 +43,7 @@ TODO add example
 7. Click _Find Traces_, and you should see a trace.
 8. Click into that, and you should see the details. 
 
-![Zipkin view from the example application.](../.gitbook/assets/image.png)
+![Zipkin view from the example application.](../../.gitbook/assets/image.png)
 
 ### How does it work?
 
@@ -103,7 +103,7 @@ Configure 100% sample rate, otherwise, few traces will be sampled.
 
 ```
 
-There are multiple ways to configure how OpenCensus sample traces. Learn more in  [OpenCensus Sampling](../tracing/sampling.md).
+There are multiple ways to configure how OpenCensus sample traces. Learn more in  [OpenCensus Sampling](../../tracing/sampling.md).
 
 #### Using the Tracer
 
