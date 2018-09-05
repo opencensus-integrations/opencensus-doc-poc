@@ -14,9 +14,6 @@
   * [Recording](metrics/recording.md)
   * [Views](metrics/views.md)
   * [Sampling](metrics/sampling.md)
-  * [Exporters](metrics/exporters/README.md)
-    * [Prometheus](metrics/exporters/prometheus.md)
-    * [Stackdriver](metrics/exporters/stackdriver.md)
 * [Exporters](exporters/README.md)
   * [Supported Exporters](exporters/supported-exporters.md)
   * [Writing Custom Exporters](exporters/writing-custom-exporters.md)
@@ -25,5 +22,4 @@
   * [Memcached](integrations/memcached.md)
 * [Roadmap](roadmap.md)
 * [Community](community.md)
-* [Users](users.md)
 
