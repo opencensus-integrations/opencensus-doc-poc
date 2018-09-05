@@ -11,14 +11,13 @@ There is a specialized Jedis client that implements OpenCensus Tracing and Metri
 First, Install the artifact.
 
 ```bash
-git clone ...
+git clone ... jedis-opencensus
+cd jedis-opencensus
 mvn install
-mvn install:install-file -Dfile=$(pwd)/target/jedis-3.0.0-SNAPSHOT.jar \
-  -DgroupId=redis.clients -DartifactId=jedis -Dversion=3.0.0 \
+mvn install:install-file -Dfile=target/jedis-3.0.0-SNAPSHOT.jar \
+  -DgroupId=redis.clients -DartifactId=jedis -Dversion=3.0.0-opencensus \
   -Dpackaging=jar -DgeneratePom=true
 ```
-
-
 
 Then, configure the build dependency for Maven or Gradle.
 
@@ -28,7 +27,7 @@ Then, configure the build dependency for Maven or Gradle.
 <dependency>
     <groupId>redis.clients</groupId>
     <artifactId>jedis</artifactId>
-    <version>${jedis.version}</version>
+    <version>3.0.0-opencensus</version>
     <type>jar</type>
     <scope>compile</scope>
 </dependency>
