@@ -24,5 +24,9 @@
   * [Memcached](integrations/memcached.md)
 * [Roadmap](roadmap.md)
 * [Community](community.md)
-* [gRPC](grpc.md)
+* [gRPC](grpc/README.md)
+  * [Java](grpc/java.md)
+  * [Go](grpc/go.md)
+  * [Python](grpc/python.md)
+  * [C++](grpc/c++.md)
 

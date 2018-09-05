@@ -4,7 +4,7 @@ gRPC is a high performance, open-source universal RPC framework. OpenCensus is i
 
 | Language |  |  |
 | :--- | :--- | :--- |
-| Java | [Tracing](grpc.md) | Metrics |
+| Java | [Tracing](./) | Metrics |
 | Go | Tracing | Metrics |
 | Python | Tracing |  |
 | C++ | Tracing | Metrics |
