@@ -22,6 +22,7 @@
 * [Integrations](integrations/README.md)
   * [Redis](integrations/redis.md)
   * [Memcached](integrations/memcached.md)
+* [zPages](zpages.md)
 * [gRPC](grpc/README.md)
   * [Java](grpc/java.md)
   * [Go](grpc/go.md)
@@ -29,5 +30,4 @@
   * [C++](grpc/c++.md)
 * [Roadmap](roadmap.md)
 * [Community](community.md)
-* [zPages](zpages.md)
 
