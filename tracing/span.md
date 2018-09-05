@@ -31,12 +31,24 @@ Examples of span names:
 
 You can use Tracer to create a new Span.
 
+{% tabs %}
+{% tab title="Java" %}
 ```java
 Tracer tracer = Tracing.getTracer();
 try (Scope scope = tracer.spanBuilder("work").startScopedSpan()) {
    ...
 }
 ```
+{% endtab %}
+
+{% tab title="Go" %}
+```go
+ctx, span := trace.StartSpan(context.Context ctx, "work")
+...
+defer span.End()
+```
+{% endtab %}
+{% endtabs %}
 
 This code snippet will create a new Span, however, whether it's a root span or a child span depends on whether you already have another overarching Span.
 
