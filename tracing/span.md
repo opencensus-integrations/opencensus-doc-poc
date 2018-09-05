@@ -71,5 +71,23 @@ tracer.getCurrentSpan()
 span.addAnnotation("doing work");
 ```
 
+{% tabs %}
+{% tab title="Java" %}
+```java
+Tracer tracer = Tracing.getTracer();
+tracer.getCurrentSpan()
 
+// Do something with the Span
+span.addAnnotation("doing work");
+```
+{% endtab %}
+
+{% tab title="Go" %}
+```go
+// 1. Span is retrieved when you create it.
+ctx, span := trace.StartSpan(context.Context ctx, "work")
+span.Annotate("doing work")
+```
+{% endtab %}
+{% endtabs %}
 
