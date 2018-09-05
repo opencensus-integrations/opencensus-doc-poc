@@ -20,7 +20,6 @@
     * [Java](exporters/supported-exporters/java/README.md)
       * [Zipkin](exporters/supported-exporters/java/zipkin.md)
   * [Writing Custom Exporters](exporters/writing-custom-exporters.md)
-* [zPages](zpages%20%281%29.md)
 * [Transport](transport/README.md)
   * [gRPC](transport/grpc/README.md)
     * [Java](transport/grpc/java.md)
