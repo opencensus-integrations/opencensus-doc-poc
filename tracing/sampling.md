@@ -2,16 +2,16 @@
 
 Trace data is often very large in size and is expensive to collect. This is why rather than collecting traces for every request, downsampling is preferred. By configuring the sampler and sampling rate, you can control how much trace data to export to the backend.
 
-## Global and Span Sampler
+## Sampler Scopes
 
 You can configure the sampler \(and thus the sampling rate\) globally, or for a specific span.
 
-* **Global sampler**: Global sampler is the global default.
-* **Span sampler**: When starting a new span, a custom sampler can be provided. If no custom sampling is provided, the global sampler is used. Span samplers are useful if you want to over-sample some sections of your code. For example, a low throughput background service may use a higher sampling rate than a high-load RPC server.
+* **Global default sampler**: Global sampler is the global default.
+* **Span scoped sampler**: When starting a new span, a custom sampler can be provided. If no custom sampling is provided, the global sampler is used. Span samplers are useful if you want to over-sample some sections of your code. For example, a low throughput background service may use a higher sampling rate than a high-load RPC server.
 
-### Global Sampler
+### Globally Default Sampler
 
-Global sampler is configured in `TraceConfig`.
+Globally Scoped Sampler is configured in `TraceConfig`.
 
 ```java
 		// Configure a Global Sampler
@@ -24,7 +24,7 @@ Global sampler is configured in `TraceConfig`.
 				Samplers.alwaysSample()).build());
 ```
 
-### Span Sampler
+### Span Scoped Sampler
 
 When starting a new span, a custom sampler can be provided. If no custom sampling is provided, the global sampler is used. Span samplers are useful if you want to over-sample some sections of your code. For example, a low throughput background service may use a higher sampling rate than a high-load RPC server.
 
@@ -54,16 +54,18 @@ The OpenCensus library samples based on the following rules:
 
 Whether you configure the globally or just for the span, you can use one of the following pre-created samplers to configure the sampling rate:
 
-* `AlwaysSample` - sampler that makes a "yes" decision every time.
-* `NeverSample` - sampler that makes a "no" decision every time.
-* `Probability` - sampler that tries to uniformly sample traces with a given probability. When applied to a child `Span` of a **sampled** parent `Span`, the child `Span` keeps the sampling decision.
+| Sampler | Description |
+| :--- | :--- |
+| `Always` | Makes a "yes" decision every time. |
+| `Never` | Makes a "no" decision every time. |
+| `Probability` | Tries to uniformly sample traces with a given probability. When applied to a child `Span` of a **sampled** parent `Span`, the child `Span` keeps the sampling decision. |
 
 By default, OpenCensus uses a probabilistic sampler that will sample one in every 10,000 requests.
 
 ### Always Sampler
 
 ```java
-Samplers.probabilitySampler(0.01)
+Samplers.alwaysSampler()
 ```
 
 ### Never Sampler
