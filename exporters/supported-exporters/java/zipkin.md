@@ -29,8 +29,6 @@ OpenCensus Java has support for this exporter available through package [io.open
 
 {% tabs %}
 {% tab title="Snippet" %}
-
-
 ```java
 ZipkinTraceExporter.createAndRegister(
     "http://localhost:9411/api/v2/spans",
@@ -60,5 +58,18 @@ The `createAndRegister` method takes in 2 parameters:
 | URL | ... |
 | Service Name | .. |
 
+## Example
 
+A full working example in [opencensus-tracing-to-zipkin](https://github.com/saturnism/opencensus-java-by-example/tree/master/opencensus-tracing-to-zipkin) GitHub repository. 
+
+1. Clone the example repository: `git clone https://github.com/saturnism/opencensus-java-by-example`
+2. Change to the example directory: `cd opencensus-java-by-example/opencensus-tracing-to-zipkin`
+3. Download Zipkin: `curl -sSL https://zipkin.io/quickstart.sh | bash -s`
+4. Start Zipkin: `java -jar zipkin.jar`
+5. Run the code: `mvn compile exec:java -Dexec.mainClass=com.example.TracingToZipkin`
+6. Navigate to Zipkin Web UI: `http://localhost:9411`
+7. Click _Find Traces_, and you should see a trace.
+8. Click into that, and you should see the details.
+
+![](../../../.gitbook/assets/image%20%281%29.png)
 
