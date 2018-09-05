@@ -25,7 +25,7 @@ span.addAnnotation("starting work");
 
 ## Attributes
 
-An annotation can have Attributes \(a key/value map\) that can associate the annotation with additional relevant information.
+An annotation can have Attributes \(a key/value\) that can associate the annotation with additional relevant information.
 
 ```java
 // 3. Add an annotation with attributes

@@ -1,3 +1,7 @@
+---
+description: Blurb on Tracing
+---
+
 # Tracing
 
 ## Run the Example
