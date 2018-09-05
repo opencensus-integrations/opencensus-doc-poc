@@ -31,7 +31,8 @@
   * [Redis](integrations/redis/README.md)
     * [Java with Jedis](integrations/redis/java.md)
   * [Memcached](integrations/memcached.md)
-* [Solutions](solutions.md)
+* [Solutions](solutions/README.md)
+  * [Internet of Things](solutions/internet-of-things.md)
 * [Roadmap](roadmap.md)
 * [Community](community.md)
 

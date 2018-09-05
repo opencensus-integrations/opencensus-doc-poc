@@ -13,7 +13,7 @@ First, Install the artifact.
 ```bash
 git clone ... jedis-opencensus
 cd jedis-opencensus
-mvn install
+mvn package
 mvn install:install-file -Dfile=target/jedis-3.0.0-SNAPSHOT.jar \
   -DgroupId=redis.clients -DartifactId=jedis -Dversion=3.0.0-opencensus \
   -Dpackaging=jar -DgeneratePom=true
