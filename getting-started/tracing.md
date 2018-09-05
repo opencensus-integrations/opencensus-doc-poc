@@ -1,23 +1,6 @@
----
-description: Blurb on Tracing
----
-
 # Tracing
 
-## Run the Example
-
-1. Download Zipkin: `curl -sSL https://zipkin.io/quickstart.sh | bash -s`
-2. Start Zipkin: `java -jar zipkin.jar`
-3. Run the code: `mvn compile exec:java -Dexec.mainClass=com.example.TracingToZipkin`
-4. Navigate to Zipkin Web UI: `http://localhost:9411`
-5. Click _Find Traces_, and you should see a trace.
-6. Click into that, and you should see the details. 
-
-![Zipkin view from the example application.](../.gitbook/assets/image.png)
-
-## How Does It Work?
-
-### Configure Maven / Gradle
+## Configure Maven / Gradle
 
 #### Maven Configuration
 
@@ -46,6 +29,21 @@ description: Blurb on Tracing
 ```text
 TODO add example
 ```
+
+## Simple Example
+
+### Run it locally
+
+1. Clone the example repository: `git clone https://github.com/saturnism/opencensus-java-by-example`
+2. Change to the example directory: `cd opencensus-java-by-example/opencensus-tracing-to-zipkin`
+3. Download Zipkin: `curl -sSL https://zipkin.io/quickstart.sh | bash -s`
+4. Start Zipkin: `java -jar zipkin.jar`
+5. Run the code: `mvn compile exec:java -Dexec.mainClass=com.example.TracingToZipkin`
+6. Navigate to Zipkin Web UI: `http://localhost:9411`
+7. Click _Find Traces_, and you should see a trace.
+8. Click into that, and you should see the details. 
+
+![Zipkin view from the example application.](../.gitbook/assets/image.png)
 
 ### How does it work?
 
@@ -79,7 +77,7 @@ public static void main(String[] args) {
 	}
 ```
 
-### \(1\) Configure Exporter
+#### \(1\) Configure Exporter
 
 OpenCensus can export traces to different distributed tracing stores \(such as Zipkin, Jeager, Stackdriver Trace\). In \(1\), we configure OpenCensus to export to Zipkin, which is listening on `localhost` port `9411`, and all of the traces from this program will be associated with a service name `tracing-to-zipkin-service`.
 
@@ -91,7 +89,7 @@ OpenCensus can export traces to different distributed tracing stores \(such as Z
 
 There are multiple exporters. Learn more about [OpenCensus Exporters]().
 
-### \(2\) Configure Sampler
+#### \(2\) Configure Sampler
 
 Configure 100% sample rate, otherwise, few traces will be sampled.
 
@@ -107,7 +105,7 @@ Configure 100% sample rate, otherwise, few traces will be sampled.
 
 There are multiple ways to configure how OpenCensus sample traces. Learn more in  [OpenCensus Sampling](../tracing/sampling.md).
 
-### \(3\) Using the Tracer
+#### \(3\) Using the Tracer
 
 To start a trace, you first need to get a reference to the `Tracer` \(3\). It can be retrieved as a global singleton.
 
@@ -116,7 +114,7 @@ To start a trace, you first need to get a reference to the `Tracer` \(3\). It ca
 		Tracer tracer = Tracing.getTracer();
 ```
 
-### \(4\) Create a Span
+#### \(4\) Create a Span
 
 To create a span in a trace, we used the `Tracer` to start a new span \(4\). A span must be closed in order to mark the end of the span. A scoped span \(`Scope`\) implements `AutoCloseable`, so when used within a `try` block in Java 8, the span will be closed automatically when exiting the `try` block.
 
@@ -131,7 +129,7 @@ To create a span in a trace, we used the `Tracer` to start a new span \(4\). A s
 		}
 ```
 
-### \(4\) Create a Child Span
+#### \(4\) Create a Child Span
 
 The `main` method calls `doWork` a number of times. Each invocation also generates a child span. Take a look at `doWork`method.
 
@@ -156,7 +154,7 @@ The `main` method calls `doWork` a number of times. Each invocation also generat
 
 ```
 
-### \(5\) Shutdown the Tracer
+#### \(5\) Shutdown the Tracer
 
 Traces are queued up in memory and flushed to the trace store \(in this case, Zipkin\) periodically, and/or when the buffer is full. In \(5\), we need to make sure that any buffered traces that had yet been sent are flushed for a graceful shutdown.
 
