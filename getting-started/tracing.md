@@ -77,7 +77,7 @@ public static void main(String[] args) {
 	}
 ```
 
-#### \(1\) Configure Exporter
+#### Configure Exporter
 
 OpenCensus can export traces to different distributed tracing stores \(such as Zipkin, Jeager, Stackdriver Trace\). In \(1\), we configure OpenCensus to export to Zipkin, which is listening on `localhost` port `9411`, and all of the traces from this program will be associated with a service name `tracing-to-zipkin-service`.
 
@@ -89,7 +89,7 @@ OpenCensus can export traces to different distributed tracing stores \(such as Z
 
 There are multiple exporters. Learn more about [OpenCensus Exporters]().
 
-#### \(2\) Configure Sampler
+#### Configure Sampler
 
 Configure 100% sample rate, otherwise, few traces will be sampled.
 
@@ -105,7 +105,7 @@ Configure 100% sample rate, otherwise, few traces will be sampled.
 
 There are multiple ways to configure how OpenCensus sample traces. Learn more in  [OpenCensus Sampling](../tracing/sampling.md).
 
-#### \(3\) Using the Tracer
+#### Using the Tracer
 
 To start a trace, you first need to get a reference to the `Tracer` \(3\). It can be retrieved as a global singleton.
 
@@ -114,7 +114,7 @@ To start a trace, you first need to get a reference to the `Tracer` \(3\). It ca
 		Tracer tracer = Tracing.getTracer();
 ```
 
-#### \(4\) Create a Span
+#### Create a Span
 
 To create a span in a trace, we used the `Tracer` to start a new span \(4\). A span must be closed in order to mark the end of the span. A scoped span \(`Scope`\) implements `AutoCloseable`, so when used within a `try` block in Java 8, the span will be closed automatically when exiting the `try` block.
 
@@ -129,7 +129,7 @@ To create a span in a trace, we used the `Tracer` to start a new span \(4\). A s
 		}
 ```
 
-#### \(4\) Create a Child Span
+#### Create a Child Span
 
 The `main` method calls `doWork` a number of times. Each invocation also generates a child span. Take a look at `doWork`method.
 
@@ -154,7 +154,7 @@ The `main` method calls `doWork` a number of times. Each invocation also generat
 
 ```
 
-#### \(5\) Shutdown the Tracer
+#### Shutdown the Tracer
 
 Traces are queued up in memory and flushed to the trace store \(in this case, Zipkin\) periodically, and/or when the buffer is full. In \(5\), we need to make sure that any buffered traces that had yet been sent are flushed for a graceful shutdown.
 
