@@ -87,7 +87,7 @@ OpenCensus can export traces to different distributed tracing stores \(such as Z
 		    "http://localhost:9411/api/v2/spans", "tracing-to-zipkin-service");
 ```
 
-There are multiple exporters. Learn more about [OpenCensus Exporters]().
+You can export trace data to different backends. Learn more in [OpenCensus Supported Exporters](../../exporters/supported-exporters/).
 
 #### Configure Sampler
 
