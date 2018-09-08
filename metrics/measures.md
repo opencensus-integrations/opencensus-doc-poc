@@ -28,7 +28,7 @@ public class App {
 
 **Method:** `MeasureDouble` _&&_ `MeasureLong`
 
-**Arguments:**
+Arguments**:**
 
 1. **`name`** \(_string_\): A string by which the measure will be referred to. Names MUST be unique within the library. It is recommended to use names compatible with the intended end usage, e.g, use host/path pattern. _Example:_ `"compressor_app/size"`
 2. **`description`** \(string\): A string describing the measure. _Example:_ ****`"Size of the video in bytes"`.
@@ -49,7 +49,7 @@ var (
 
 **Method:** `stats.Int64` _&&_ `stats.Float64`
 
-**Arguments:**
+Arguments**:**
 
 1. **`name`** \(_string_\): A string by which the measure will be referred to. Names MUST be unique within the library. It is recommended to use names compatible with the intended end usage, e.g, use host/path pattern. _Example:_ `"compressor_app/size"`
 2. **`description`** \(string\): A string describing the measure. _Example:_ ****`"Size of the video in bytes"`.
@@ -69,7 +69,7 @@ const mSizeBy = stats.createMeasureInt64("compressor_app/size", MeasureUnit.BYTE
 
 **Method:** `Stats.createMeasureDouble` _&&_ `Stats.createMeasureInt64`
 
-**Arguments:**
+Arguments**:**
 
 1. **`name`** \(_string_\): A string by which the measure will be referred to. Names MUST be unique within the library. It is recommended to use names compatible with the intended end usage, e.g, use host/path pattern. _Example:_ `"compressor_app/size"`
 2. **`unit`** \(string\): A string describing the unit used for the `Measure`. Follows the format described by [Unified Code for Units of Measure](http://unitsofmeasure.org/ucum.html). _Example:_ `"By"`
@@ -87,7 +87,7 @@ m_latency_ms = measure_module.MeasureFloat("compressor_app/latency", "The latenc
 
 **Method:** `Measure.MeasureInt` _&&_ `Measure.MeasureFloat`
 
-**Arguments:**
+Arguments**:**
 
 1. **`name`** \(_string_\): A string by which the measure will be referred to. Names MUST be unique within the library. It is recommended to use names compatible with the intended end usage, e.g, use host/path pattern. _Example:_ `"compressor_app/size"`
 2. **`description`** \(string\): A string describing the measure. _Example:_ ****`"Size of the video in bytes"`.

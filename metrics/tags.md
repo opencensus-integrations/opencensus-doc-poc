@@ -36,7 +36,7 @@ public class App {
 
 Create a `TagKey` for adding metadata to measures.
 
-**Arguments:**
+Arguments**:**
 
 1. **`name`** \(_string_\): A string by which the tag will be referred to. _Example:_ `"device"`
 
@@ -44,19 +44,19 @@ Create a `TagKey` for adding metadata to measures.
 
 Returns the `Tagger` for this implementation.
 
-**Arguments:** \(none\)
+Arguments**:** \(none\)
 
 **Method:** `Tagger.currentBuilder`
 
 Returns a new builder created from the current TagContext.
 
-**Arguments:** \(none\)
+Arguments**:** \(none\)
 
 **Method:** `TagContextBuilder.put`
 
 Adds the key/value pair regardless of whether the key is present.
 
-**Arguments:**
+Arguments**:**
 
 1. **`tag key`** \(_TagKey_\): key which will be set. _Example:_ `TagKey.create("device")`
 2. **`tag value`** \(_TagValue\):_ value to set for the given key. _Example:_ `TagValue.create("mobile-ios")`
@@ -65,7 +65,7 @@ Adds the key/value pair regardless of whether the key is present.
 
 Enters the scope of code where the TagContext created from this builder is in the current context and returns an object that represents that scope. The scope is exited when the returned object is closed.
 
-**Arguments:** \(none\)
+Arguments**:** \(none\)
 {% endtab %}
 
 {% tab title="Go" %}
@@ -90,7 +90,7 @@ func main() {
 
 Creates or retrieves a string key identified by name. Calling `NewKey` consequently with the same name returns the same key.
 
-**Arguments:**
+Arguments**:**
 
 1. **`name`** \(_string_\): A string by which the tag will be referred to. _Example:_ `"device"`
 
@@ -98,7 +98,7 @@ Creates or retrieves a string key identified by name. Calling `NewKey` consequen
 
 Returns a mutator that inserts a value associated with the key. If the key already exists in the tag map, mutator doesn't update the value.
 
-**Arguments:**
+Arguments**:**
 
 1. **`tag key`** \(Key\): key which will be set. _Example:_ `TagKey.create("device")`
 2. **`tag value`** \(string_\):_ value to set for the given key. _Example:_ `TagValue.create("mobile-ios")`
@@ -107,7 +107,7 @@ Returns a mutator that inserts a value associated with the key. If the key alrea
 
 Returns a new context that contains a tag map originated from the incoming context and modified with the provided mutators.
 
-**Arguments:**
+Arguments**:**
 
 1. **`context`** \(_ctx_\): The context to modify. _Example:_ `context.Background()`
 2. **`mutator`** \(_Mutator_\): The mutator to add to the returned context. _Example:_ `tag.insert(KeyDevice, "mobile-ios")`
