@@ -7,7 +7,7 @@ To use Metrics, you must know how to use each of the following components:
 * [Measures](measures.md): Declare what quantifiable data you will be recording
 * [Tags](tags.md): Add a dimension to your measures
 * [Recording](recording.md): Make the tagged measures available for the view
-* [Aggregation](aggregation.md): Choose how to group your measurements
+* [Aggregation](aggregation.md): Choose how to group your recordings
 * [Views](views.md): Organize your measurements by aggregations and tags to be visualized in a backend
 
 {% hint style="success" %}
