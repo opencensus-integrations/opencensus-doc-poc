@@ -31,6 +31,41 @@ public class App {
 }
 
 ```
+
+**Method**: `TagKey.create`
+
+Create a `TagKey` for adding metadata to measures.
+
+**Arguments:**
+
+1. **`name`** \(_string_\): A string by which the tag will be referred to. _Example:_ `"device"`
+
+**Method:** `Tags.getTagger`
+
+Returns the `Tagger` for this implementation.
+
+**Arguments:** \(none\)
+
+**Method:** `Tagger.currentBuilder`
+
+Returns a new builder created from the current TagContext.
+
+**Arguments:** \(none\)
+
+**Method:** `TagContextBuilder.put`
+
+Adds the key/value pair regardless of whether the key is present.
+
+**Arguments:**
+
+1. **`tag key`** \(_TagKey_\): key which will be set. _Example:_ `TagKey.create("device")`
+2. **`tag value`** \(_TagValue\):_ value to set for the given key. _Example:_ `TagValue.create("mobile-ios")`
+
+**Method:** `TagContextBuilder.buildScoped`
+
+Enters the scope of code where the TagContext created from this builder is in the current context and returns an object that represents that scope. The scope is exited when the returned object is closed.
+
+**Arguments:** \(none\)
 {% endtab %}
 
 {% tab title="Go" %}
@@ -50,6 +85,32 @@ func main() {
 	// automatically have the "mobile-ios" tag
 }
 ```
+
+**Method**: `tag.NewKey`
+
+Creates or retrieves a string key identified by name. Calling `NewKey` consequently with the same name returns the same key.
+
+**Arguments:**
+
+1. **`name`** \(_string_\): A string by which the tag will be referred to. _Example:_ `"device"`
+
+**Method:** `tag.Insert`
+
+Returns a mutator that inserts a value associated with the key. If the key already exists in the tag map, mutator doesn't update the value.
+
+**Arguments:**
+
+1. **`tag key`** \(Key\): key which will be set. _Example:_ `TagKey.create("device")`
+2. **`tag value`** \(string_\):_ value to set for the given key. _Example:_ `TagValue.create("mobile-ios")`
+
+**Method:** `tag.New`
+
+Returns a new context that contains a tag map originated from the incoming context and modified with the provided mutators.
+
+**Arguments:**
+
+1. **`context`** \(_ctx_\): The context to modify. _Example:_ `context.Background()`
+2. **`mutator`** \(_Mutator_\): The mutator to add to the returned context. _Example:_ `tag.insert(KeyDevice, "mobile-ios")`
 {% endtab %}
 
 {% tab title="Node.js" %}
@@ -74,6 +135,8 @@ stats.record({
   value: 5000000
 });
 ```
+
+Simply create a string and pass it in to `stats.record`. For more information, visit [Recording](recording.md).
 {% endtab %}
 
 {% tab title="Python" %}
@@ -113,8 +176,4 @@ if __name__ == "__main__":
 ```
 {% endtab %}
 {% endtabs %}
-
-### Arguments
-
-1. **`name`** \(_string_\): A string by which the tag will be referred to. _Example:_ `"device"`
 

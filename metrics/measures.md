@@ -19,12 +19,20 @@ import io.opencensus.stats.Measure.MeasureDouble;
 
 public class App {
     private static final MeasureLong VIDEO_SIZE =
-        MeasureDouble.create("compressor_app/size", "Size of the video in bytes", "by");
+        MeasureLong.create("compressor_app/size", "Size of the video in bytes", "by");
     
     private static final MeasureDouble RPC_LATENCY =
         MeasureDouble.create("compressor_app/latency", "Latency of method in milliseconds", "ms");
 }
 ```
+
+**Method:** `MeasureDouble` _&&_ `MeasureLong`
+
+**Arguments:**
+
+1. **`name`** \(_string_\): A string by which the measure will be referred to. Names MUST be unique within the library. It is recommended to use names compatible with the intended end usage, e.g, use host/path pattern. _Example:_ `"compressor_app/size"`
+2. **`description`** \(string\): A string describing the measure. _Example:_ ****`"Size of the video in bytes"`.
+3. **`unit`** \(string\): A string describing the unit used for the `Measure`. Follows the format described by [Unified Code for Units of Measure](http://unitsofmeasure.org/ucum.html). _Example:_ `"By"`
 {% endtab %}
 
 {% tab title="Go" %}
@@ -38,6 +46,14 @@ var (
     MLatencyMs = stats.Float64("compressor_app/latency", "Latency of method in milliseconds ", "ms")
 )
 ```
+
+**Method:** `stats.Int64` _&&_ `stats.Float64`
+
+**Arguments:**
+
+1. **`name`** \(_string_\): A string by which the measure will be referred to. Names MUST be unique within the library. It is recommended to use names compatible with the intended end usage, e.g, use host/path pattern. _Example:_ `"compressor_app/size"`
+2. **`description`** \(string\): A string describing the measure. _Example:_ ****`"Size of the video in bytes"`.
+3. **`unit`** \(string\): A string describing the unit used for the `Measure`. Follows the format described by [Unified Code for Units of Measure](http://unitsofmeasure.org/ucum.html). _Example:_ `"By"`
 {% endtab %}
 
 {% tab title="Node.js" %}
@@ -50,6 +66,14 @@ const stats = new Stats();
 const mLatencyMs = stats.createMeasureDouble("compressor_app/latency", MeasureUnit.MS, "The latency of the method in milliseconds");
 const mSizeBy = stats.createMeasureInt64("compressor_app/size", MeasureUnit.BYTE, "The size of the video in bytes");
 ```
+
+**Method:** `Stats.createMeasureDouble` _&&_ `Stats.createMeasureInt64`
+
+**Arguments:**
+
+1. **`name`** \(_string_\): A string by which the measure will be referred to. Names MUST be unique within the library. It is recommended to use names compatible with the intended end usage, e.g, use host/path pattern. _Example:_ `"compressor_app/size"`
+2. **`unit`** \(string\): A string describing the unit used for the `Measure`. Follows the format described by [Unified Code for Units of Measure](http://unitsofmeasure.org/ucum.html). _Example:_ `"By"`
+3. **`description`** \(string\): A string describing the measure. _Example:_ ****`"Size of the video in bytes"`
 {% endtab %}
 
 {% tab title="Python" %}
@@ -60,14 +84,14 @@ from opencensus.stats import stats as stats_module
 m_size_by = measure_module.MeasureInt("compressor_app/size", "The size of the video in bytes", "By");
 m_latency_ms = measure_module.MeasureFloat("compressor_app/latency", "The latency of the method in milliseconds", "ms")
 ```
-{% endtab %}
-{% endtabs %}
 
-### Arguments
+**Method:** `Measure.MeasureInt` _&&_ `Measure.MeasureFloat`
 
-_Note: Arguments may differ slightly for each language._
+**Arguments:**
 
 1. **`name`** \(_string_\): A string by which the measure will be referred to. Names MUST be unique within the library. It is recommended to use names compatible with the intended end usage, e.g, use host/path pattern. _Example:_ `"compressor_app/size"`
 2. **`description`** \(string\): A string describing the measure. _Example:_ ****`"Size of the video in bytes"`.
 3. **`unit`** \(string\): A string describing the unit used for the `Measure`. Follows the format described by [Unified Code for Units of Measure](http://unitsofmeasure.org/ucum.html). _Example:_ `"By"`
+{% endtab %}
+{% endtabs %}
 
