@@ -8,7 +8,7 @@ To use Metrics, you must know how to use each of the following components:
 * [Tags](tags.md): Add a dimension to your measures
 * [Recording](recording.md): Make the tagged measures available for the view
 * [Aggregation](aggregation.md): Choose how to group your recordings
-* [Views](views.md): Organize your measurements by aggregations and tags to be visualized in a backend
+* [Views](views.md): Organize your recordings by aggregations and tags to be visualized in a backend
 
 {% hint style="success" %}
 **Example**: You run a video compression service and want to record the size of all videos requested to be compressed \(**measure**\) and filter the results by device used by the client \(**tag**\). You organize the recorded data into a histogram \(**aggregation**\) and export your **view** to a backend for visualization. 

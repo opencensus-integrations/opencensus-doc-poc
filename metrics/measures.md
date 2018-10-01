@@ -26,13 +26,33 @@ public class App {
 }
 ```
 
-**Method:** `MeasureDouble` _&&_ `MeasureLong`
-
-Arguments**:**
-
-1. **`name`** \(_string_\): A string by which the measure will be referred to. Names MUST be unique within the library. It is recommended to use names compatible with the intended end usage, e.g, use host/path pattern. _Example:_ `"compressor_app/size"`
-2. **`description`** \(string\): A string describing the measure. _Example:_ ****`"Size of the video in bytes"`.
-3. **`unit`** \(string\): A string describing the unit used for the `Measure`. Follows the format described by [Unified Code for Units of Measure](http://unitsofmeasure.org/ucum.html). _Example:_ `"By"`
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>Method:</b>  <code>MeasureDouble.create</code>  <em>&&</em>  <code>MeasureLong.create</code>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p>Arguments<b>:</b>
+        </p>
+        <ol>
+          <li><b><code>name</code></b> (<em>string</em>): A string by which the measure
+            will be referred to. Names MUST be unique within the library. It is recommended
+            to use names compatible with the intended end usage, e.g, use host/path
+            pattern. <em>Example:</em>  <code>&quot;compressor_app/size&quot;</code>
+          </li>
+          <li><b><code>description</code></b> (string): A string describing the measure. <em>Example:</em><b> </b><code>&quot;Size of the video in bytes&quot;</code>.</li>
+          <li><b><code>unit</code></b> (string): A string describing the unit used for
+            the <code>Measure</code>. Follows the format described by <a href="http://unitsofmeasure.org/ucum.html">Unified Code for Units of Measure</a>. <em>Example:</em>  <code>&quot;By&quot;</code>
+          </li>
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table>
 {% endtab %}
 
 {% tab title="Go" %}
@@ -47,13 +67,33 @@ var (
 )
 ```
 
-**Method:** `stats.Int64` _&&_ `stats.Float64`
-
-Arguments**:**
-
-1. **`name`** \(_string_\): A string by which the measure will be referred to. Names MUST be unique within the library. It is recommended to use names compatible with the intended end usage, e.g, use host/path pattern. _Example:_ `"compressor_app/size"`
-2. **`description`** \(string\): A string describing the measure. _Example:_ ****`"Size of the video in bytes"`.
-3. **`unit`** \(string\): A string describing the unit used for the `Measure`. Follows the format described by [Unified Code for Units of Measure](http://unitsofmeasure.org/ucum.html). _Example:_ `"By"`
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>Method: </b><code>stats.Int64</code>  <em>&&</em>  <code>stats.Float64</code>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p>Arguments<b>:</b>
+        </p>
+        <ol>
+          <li><b><code>name</code></b> (<em>string</em>): A string by which the measure
+            will be referred to. Names MUST be unique within the library. It is recommended
+            to use names compatible with the intended end usage, e.g, use host/path
+            pattern. <em>Example:</em>  <code>&quot;compressor_app/size&quot;</code>
+          </li>
+          <li><b><code>description</code></b> (string): A string describing the measure. <em>Example:</em><b> </b><code>&quot;Size of the video in bytes&quot;</code>.</li>
+          <li><b><code>unit</code></b> (string): A string describing the unit used for
+            the <code>Measure</code>. Follows the format described by <a href="http://unitsofmeasure.org/ucum.html">Unified Code for Units of Measure</a>. <em>Example:</em>  <code>&quot;By&quot;</code>
+          </li>
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table>
 {% endtab %}
 
 {% tab title="Node.js" %}
@@ -67,13 +107,34 @@ const mLatencyMs = stats.createMeasureDouble("compressor_app/latency", MeasureUn
 const mSizeBy = stats.createMeasureInt64("compressor_app/size", MeasureUnit.BYTE, "The size of the video in bytes");
 ```
 
-**Method:** `Stats.createMeasureDouble` _&&_ `Stats.createMeasureInt64`
-
-Arguments**:**
-
-1. **`name`** \(_string_\): A string by which the measure will be referred to. Names MUST be unique within the library. It is recommended to use names compatible with the intended end usage, e.g, use host/path pattern. _Example:_ `"compressor_app/size"`
-2. **`unit`** \(string\): A string describing the unit used for the `Measure`. Follows the format described by [Unified Code for Units of Measure](http://unitsofmeasure.org/ucum.html). _Example:_ `"By"`
-3. **`description`** \(string\): A string describing the measure. _Example:_ ****`"Size of the video in bytes"`
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>Method: </b><code>Stats.createMeasureDouble</code>  <em>&&</em>  <code>Stats.createMeasureInt64</code>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p>Arguments<b>:</b>
+        </p>
+        <ol>
+          <li><b><code>name</code></b> (<em>string</em>): A string by which the measure
+            will be referred to. Names MUST be unique within the library. It is recommended
+            to use names compatible with the intended end usage, e.g, use host/path
+            pattern. <em>Example:</em>  <code>&quot;compressor_app/size&quot;</code>
+          </li>
+          <li><b><code>unit</code></b> (string): A string describing the unit used for
+            the <code>Measure</code>. Follows the format described by <a href="http://unitsofmeasure.org/ucum.html">Unified Code for Units of Measure</a>. <em>Example:</em>  <code>&quot;By&quot;</code>
+          </li>
+          <li><b><code>description</code></b> (string): A string describing the measure. <em>Example:</em><b> </b><code>&quot;Size of the video in bytes&quot;</code>
+          </li>
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table>
 {% endtab %}
 
 {% tab title="Python" %}
@@ -85,13 +146,33 @@ m_size_by = measure_module.MeasureInt("compressor_app/size", "The size of the vi
 m_latency_ms = measure_module.MeasureFloat("compressor_app/latency", "The latency of the method in milliseconds", "ms")
 ```
 
-**Method:** `Measure.MeasureInt` _&&_ `Measure.MeasureFloat`
-
-Arguments**:**
-
-1. **`name`** \(_string_\): A string by which the measure will be referred to. Names MUST be unique within the library. It is recommended to use names compatible with the intended end usage, e.g, use host/path pattern. _Example:_ `"compressor_app/size"`
-2. **`description`** \(string\): A string describing the measure. _Example:_ ****`"Size of the video in bytes"`.
-3. **`unit`** \(string\): A string describing the unit used for the `Measure`. Follows the format described by [Unified Code for Units of Measure](http://unitsofmeasure.org/ucum.html). _Example:_ `"By"`
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>Method:</b>  <code>Measure.MeasureInt</code>  <em>&& </em><code>Measure.MeasureFloat</code>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p>Arguments<b>:</b>
+        </p>
+        <ol>
+          <li><b><code>name</code></b> (<em>string</em>): A string by which the measure
+            will be referred to. Names MUST be unique within the library. It is recommended
+            to use names compatible with the intended end usage, e.g, use host/path
+            pattern. <em>Example:</em>  <code>&quot;compressor_app/size&quot;</code>
+          </li>
+          <li><b><code>description</code></b> (string): A string describing the measure. <em>Example:</em><b> </b><code>&quot;Size of the video in bytes&quot;</code>.</li>
+          <li><b><code>unit</code></b> (string): A string describing the unit used for
+            the <code>Measure</code>. Follows the format described by <a href="http://unitsofmeasure.org/ucum.html">Unified Code for Units of Measure</a>. <em>Example:</em>  <code>&quot;By&quot;</code>
+          </li>
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table>
 {% endtab %}
 {% endtabs %}
 

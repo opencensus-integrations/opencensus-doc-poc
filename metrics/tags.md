@@ -32,40 +32,84 @@ public class App {
 
 ```
 
-**Method**: `TagKey.create`
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>Method:</b>  <code>TagKey.create</code>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Create a <code>TagKey</code> for adding metadata to measures.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>Arguments:</p>
+        <ol>
+          <li><b><code>name</code></b> (<em>string</em>): A string by which the tag will
+            be referred to. <em>Example: </em><code>&quot;device&quot;</code>
+          </li>
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table>| **Method:** `Tags.getTagger` |
+| :--- |
+| Returns the `Tagger` for this implementation. |
+| Arguments**:** \(none\) |
 
-Create a `TagKey` for adding metadata to measures.
+|  **Method:** `Tagger.currentBuilder` |
+| :--- |
+| Returns a new builder created from the current TagContext. |
+| Arguments**:** \(none\) |
 
-Arguments**:**
-
-1. **`name`** \(_string_\): A string by which the tag will be referred to. _Example:_ `"device"`
-
-**Method:** `Tags.getTagger`
-
-Returns the `Tagger` for this implementation.
-
-Arguments**:** \(none\)
-
-**Method:** `Tagger.currentBuilder`
-
-Returns a new builder created from the current TagContext.
-
-Arguments**:** \(none\)
-
-**Method:** `TagContextBuilder.put`
-
-Adds the key/value pair regardless of whether the key is present.
-
-Arguments**:**
-
-1. **`tag key`** \(_TagKey_\): key which will be set. _Example:_ `TagKey.create("device")`
-2. **`tag value`** \(_TagValue\):_ value to set for the given key. _Example:_ `TagValue.create("mobile-ios")`
-
-**Method:** `TagContextBuilder.buildScoped`
-
-Enters the scope of code where the TagContext created from this builder is in the current context and returns an object that represents that scope. The scope is exited when the returned object is closed.
-
-Arguments**:** \(none\)
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>Method: </b><code>TagContextBuilder.put</code>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Adds the key/value pair regardless of whether the key is present.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>Arguments<b>:</b>
+        </p>
+        <ol>
+          <li><b><code>tag key</code></b> (<em>TagKey</em>): key which will be set. <em>Example: </em><code>TagKey.create(&quot;device&quot;)</code>
+          </li>
+          <li><b><code>tag value</code></b> (<em>TagValue): </em>value to set for the
+            given key. <em>Example:</em>  <code>TagValue.create(&quot;mobile-ios&quot;)</code>
+          </li>
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table><table>
+  <thead>
+    <tr>
+      <th style="text-align:left">
+        <p></p>
+        <p><b>Method:</b>  <code>TagContextBuilder.buildScoped</code>
+        </p>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Enters the scope of code where the TagContext created from this builder
+        is in the current context and returns an object that represents that scope.
+        The scope is exited when the returned object is closed.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Arguments<b>: </b>(none)</td>
+    </tr>
+  </tbody>
+</table>
 {% endtab %}
 
 {% tab title="Go" %}
@@ -86,31 +130,83 @@ func main() {
 }
 ```
 
-**Method**: `tag.NewKey`
-
-Creates or retrieves a string key identified by name. Calling `NewKey` consequently with the same name returns the same key.
-
-Arguments**:**
-
-1. **`name`** \(_string_\): A string by which the tag will be referred to. _Example:_ `"device"`
-
-**Method:** `tag.Insert`
-
-Returns a mutator that inserts a value associated with the key. If the key already exists in the tag map, mutator doesn't update the value.
-
-Arguments**:**
-
-1. **`tag key`** \(Key\): key which will be set. _Example:_ `TagKey.create("device")`
-2. **`tag value`** \(string_\):_ value to set for the given key. _Example:_ `TagValue.create("mobile-ios")`
-
-**Method:** `tag.New`
-
-Returns a new context that contains a tag map originated from the incoming context and modified with the provided mutators.
-
-Arguments**:**
-
-1. **`context`** \(_ctx_\): The context to modify. _Example:_ `context.Background()`
-2. **`mutator`** \(_Mutator_\): The mutator to add to the returned context. _Example:_ `tag.insert(KeyDevice, "mobile-ios")`
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>Method</b>: <code>tag.NewKey</code>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Creates or retrieves a string key identified by name. Calling <code>NewKey</code> consequently
+        with the same name returns the same key.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>Arguments<b>:</b>
+        </p>
+        <ol>
+          <li><b><code>name</code></b> (<em>string</em>): A string by which the tag will
+            be referred to. <em>Example: </em><code>&quot;device&quot;</code>
+          </li>
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table><table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>Method: </b><code>tag.Insert</code>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Returns a mutator that inserts a value associated with the key. If the
+        key already exists in the tag map, mutator doesn't update the value.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>Arguments<b>:</b>
+        </p>
+        <ol>
+          <li><b><code>tag key</code></b> (Key): key which will be set. <em>Example: </em><code>TagKey.create(&quot;device&quot;)</code>
+          </li>
+          <li><b><code>tag value</code></b> (string<em>): </em>value to set for the given
+            key. <em>Example:</em>  <code>TagValue.create(&quot;mobile-ios&quot;)</code>
+          </li>
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table><table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>Method: </b><code>tag.New</code>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Returns a new context that contains a tag map originated from the incoming
+        context and modified with the provided mutators.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>Arguments<b>:</b>
+        </p>
+        <ol>
+          <li><b><code>context</code></b> (<em>ctx</em>): The context to modify. <em>Example:</em>  <code>context.Background()</code>
+          </li>
+          <li><b><code>mutator</code> </b>(<em>Mutator</em>): The mutator to add to
+            the returned context. <em>Example: </em><code>tag.insert(KeyDevice, &quot;mobile-ios&quot;)</code>
+          </li>
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table>
 {% endtab %}
 
 {% tab title="Node.js" %}
@@ -140,40 +236,95 @@ Simply create a string and pass it in to `stats.record`. For more information, v
 {% endtab %}
 
 {% tab title="Python" %}
-_Note:_ We must explicitly pass the tags in to the recording because Python does not have implicit tag awareness. This example **also** shows how to make measures and recordings:
-
 ```python
-from opencensus.stats import measure as measure_module
-from opencensus.stats import stats as stats_module
 from opencensus.tags import tag_key as tag_key_module
 from opencensus.tags import tag_map as tag_map_module
 from opencensus.tags import tag_value as tag_value_module
-
-m_size_by = measure_module.MeasureInt("compressor_app/size", "The size of the video in bytes", "By");
-
-# The stats recorder
-stats_recorder = stats.Stats().stats_recorder
 
 # Create the tag key
 key_device = tag_key_module.TagKey("device")
 
 def main():
-  # Create the measure_map into which we'll insert the measurements
-  mmap = stats_recorder.new_measurement_map()
-
-  # Record the Video Size
-   mmap.measure_int_put(m_size_by, 5000000)
-
-   # Create the Tag
-   tmap = tag_map_module.TagMap()
-   tmap.insert(key_device, tag_value_module.TagValue("mobile-ios"))
-
-   # Insert the tag map
-   mmap.record(tmap)
-
+  # Create the Tag
+  tmap = tag_map_module.TagMap()
+  tmap.insert(key_device, tag_value_module.TagValue("mobile-ios"))
+  
 if __name__ == "__main__":
    main()
 ```
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>Method: </b><code>TagKey.TagKey (constructor)</code>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Create and return a new tag key</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>Arguments:</p>
+        <ol>
+          <li><code>name</code> (<em>string</em>)<em>:  </em>A string by which the tag
+            will be referred to. <em>Example: </em><code>&quot;device&quot;</code>
+          </li>
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table><table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>Method: </b><code>TagMap.TagMap (constructor)</code>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">A tag map is a map of tags from key to value</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>Arguments:</p>
+        <ol>
+          <li><code>tags</code> (optional) (<em>tag[]</em>)<em>:  </em>A list of tags
+            to append to the tag map <em>Example: </em><code>tag_map_module.TagMap(tags=[{&apos;key1&apos;: &apos;value1&apos;}])</code>
+          </li>
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table><table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>Method: </b><code>TagMap.insert</code>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Inserts a key and value in the map if the map does not already contain
+        the key.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>Arguments:</p>
+        <ol>
+          <li><code>key</code> (<em>TagKey</em>)<em>:  </em>key which will be set. <em>Example: </em><code>tag_key_module.TagKey(&quot;device&quot;)</code>
+          </li>
+          <li><code>value</code> (<em>TagValue</em>)<em>:  </em>value to set for the
+            given key. <em>Example: </em><code>tag_value_module.TagValue(&quot;mobile-ios&quot;)</code>
+          </li>
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table>
 {% endtab %}
 {% endtabs %}
+
+
 
